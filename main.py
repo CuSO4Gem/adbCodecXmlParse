@@ -150,11 +150,13 @@ if __name__ == "__main__":
     audioPd = pd.DataFrame(audioCodec, columns=
     ["decoder/encoder", "name", "type", "channel count", "sample rate", "bitrate", "on file"], dtype=str)
     audioPd.sort_values(by=["decoder/encoder", "type", "name", "on file"], inplace=True)
+    audioPd.reset_index(drop=True, inplace=True)
     audioPd.to_csv("audio_codecs.csv")
 
     videoPd = pd.DataFrame(videoCodec, columns=
     ["decoder/encoder", "name", "type", "max size", "min size", "bitrate", "on file"], dtype=str)
     videoPd.sort_values(by=["decoder/encoder", "type", "name", "on file"], inplace=True)
+    videoPd.reset_index(drop=True, inplace=True)
     videoPd.to_csv("video_codecs.csv")
 
     print("parse file success:")
