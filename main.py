@@ -162,4 +162,6 @@ if __name__ == "__main__":
     print("parse file success:")
     for xmlPah in fileList:
         print(xmlPah)
-        
+    
+    print("press any key to exit.....")
+    os.system('pause')
