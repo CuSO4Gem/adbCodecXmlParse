@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import pandas as pd
 import xml.dom.minidom
@@ -159,6 +160,4 @@ if __name__ == "__main__":
     print("parse file success:")
     for xmlPah in fileList:
         print(xmlPah)
-     
-    exit(0)
         
