@@ -138,6 +138,11 @@ if __name__ == "__main__":
     for xmlFile in xmlList:
         fileList.append("/vendor/etc/"+xmlFile)
     xmlList.clear()
+
+    getCodecXmlList("/apex/com.android.media.swcodec/etc/", xmlList)
+    for xmlFile in xmlList:
+        fileList.append("/apex/com.android.media.swcodec/etc/"+xmlFile)
+    xmlList.clear()
     
     print("find fines:", end="")
     print(fileList)
