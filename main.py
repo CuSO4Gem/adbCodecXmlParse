@@ -15,14 +15,15 @@ def checkAdb():
         return False
 
 def getCodecXmlList(path, xmlList):
-    osRet = os.popen("adb shell \"ls "+path+" | grep codec\"")
+    osRet = os.popen("adb shell \"ls "+path+" | grep media_codec\"")
     while True:
         lineStr = osRet.readline()
         if not lineStr:
             break
         if lineStr.lower().find("permission  denied") >=0 or lineStr.lower().find("performance")>=0:
             continue
-        xmlList.append(lineStr.strip('\n'))
+        if lineStr.lower().find(".xml"):
+            xmlList.append(lineStr.strip('\n'))
     osRet.close
 
 """
